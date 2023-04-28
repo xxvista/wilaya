@@ -1,5 +1,7 @@
 "use strict";
 
+// BUG TODO FIXME
+
 const wilaya = [
   0,
   "Adrar",
@@ -67,8 +69,6 @@ document.querySelector(".right__highscore").innerHTML =
   localStorage.getItem("highscore");
 
 let wilayaNumber = Math.trunc(Math.random() * 58) + 1;
-displayWilaya(wilaya[wilayaNumber]);
-guessValue(0);
 
 //let oldNumbers = [];
 let i = -1;
@@ -85,7 +85,7 @@ const changeScore = function (score) {
   document.querySelector(".right__score").textContent = score;
 };
 
-const displayWilaya = function (wilaya){
+const displayWilaya = function (wilaya) {
   document.querySelector(".wilaya").textContent = wilaya;
 };
 
@@ -104,6 +104,9 @@ const guessValue = function (value) {
 const heartsEmoji = function (emoji) {
   document.querySelector(".right__hearts").textContent = emoji;
 };
+
+displayWilaya(wilaya[wilayaNumber]);
+guessValue(0);
 
 document.querySelector(".head__again").addEventListener("click", function () {
   changeScore(0);
@@ -157,7 +160,7 @@ document.querySelector(".left__check").addEventListener("click", function () {
     ).textContent = `🎊 Correct ${wilayaNumber} is for ${wilaya[wilayaNumber]}`;
     //oldNumbers.push(wilayaNumber);
     score++;
-    changeScore(score) ;
+    changeScore(score);
     wilaya[wilayaNumber] = 0;
     //  guessValue() 0;
     // Store
