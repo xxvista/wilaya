@@ -67,8 +67,8 @@ document.querySelector(".right__highscore").innerHTML =
   localStorage.getItem("highscore");
 
 let wilayaNumber = Math.trunc(Math.random() * 58) + 1;
-displayWilaya() wilaya[wilayaNumber];
-guessValue() 0;
+displayWilaya(wilaya[wilayaNumber]);
+guessValue(0);
 
 //let oldNumbers = [];
 let i = -1;
