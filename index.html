@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Guess My Number!</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wilaya">?</div>
+      <div class="line-1"></div>
+      <div class="line-2"></div>
+      <header class="head">
+        <p class="head__between">(Between 1 and 58)</p>
+        <h1 class="head__heading">Guess the Wilaya!</h1>
+        <button class="head__again btn">
+          <ion-icon class="head__icon" name="reload-outline"></ion-icon>
+        </button>
+      </header>
+      <main class="content">
+        <section class="left">
+          <input type="number" class="left__guess" />
+          <button class="left__check btn">Check!</button>
+        </section>
+        <section class="center">
+          <p class="center__message">Start guessing...</p>
+        </section>
+        <section class="right">
+          <p class="right__label-score">
+            💯 Score: <span class="right__score">0</span>
+          </p>
+          <p class="right__label-highscore">
+            🥇 Highscore: <span class="right__highscore">0</span>
+          </p>
+          <p class="right__label-hearts">
+            Hearts: <span class="right__hearts">❤️❤️❤️</span>
+          </p>
+        </section>
+      </main>
+      <footer class="footer">
+        <p>Made with ❤️ by <a class="abdellah" href="#">Abdellah</a></p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
