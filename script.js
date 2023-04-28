@@ -1,5 +1,14 @@
+// Remember, we're gonna use strict mode in all scripts now!
 "use strict";
 
+// BUG TODO FIXME
+/*
+console.log(document.querySelector(".center__message").textContent);
+document.querySelector(".center__message").textContent = "Correct Number!";
+
+document.querySelector(".number").textContent = 13;
+
+document.querySelector(".left__guess").value = 0;*/
 const wilaya = [
   0,
   "Adrar",
@@ -90,6 +99,7 @@ document.querySelector(".head__again").addEventListener("click", function () {
   document.querySelector(".line-1").style.backgroundColor = "#fff";
   document.querySelector(".line-2").style.backgroundColor = "#fff";
 });
+
 document.querySelector(".left__check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".left__guess").value);
   const button = document.querySelector(".left__check").textContent;
@@ -121,8 +131,9 @@ document.querySelector(".left__check").addEventListener("click", function () {
     document.querySelector(".center__message").textContent =
       "Start guessing...";
     document.querySelector(".left__check").textContent = "Check!";
-  } else if (!guess) {
-    document.querySelector(".center__message").textContent = "⛔ No Number!";
+  } else if (!guess || guess < 0 || guess > 58) {
+    document.querySelector(".center__message").textContent =
+      "⛔ Not w valid Number!";
     // Win or next
   } else if (guess === wilayaNumber) {
     document.querySelector(".line-1").style.backgroundColor = "#fff";
@@ -158,8 +169,8 @@ document.querySelector(".left__check").addEventListener("click", function () {
       }
     }
 
-    /// Too High
-  } else if (guess > wilayaNumber) {
+    /// Too High or low
+  } else if (guess !== wilayaNumber) {
     if (heart === 0) {
       document.querySelector(".right__hearts").textContent = "💔💔💔";
       document.querySelector(
@@ -175,37 +186,12 @@ document.querySelector(".left__check").addEventListener("click", function () {
       score = 0;
     } else {
       document.querySelector(".center__message").textContent =
-        "💔Too high! 📈 Keep guessing";
+        guess > wilayaNumber
+          ? "💔Too high! 📈 Keep guessing"
+          : "💔Too low! 📉 Keep guessing";
       document.querySelector(".right__hearts").textContent =
         heart === 2 ? "❤️❤️💔" : "❤️💔💔";
       //score--;TODO
-      heart--;
-      document.querySelector(".right__score").textContent = score;
-      document.querySelector(".line-1").style.backgroundColor = "#ff6b6b";
-      document.querySelector(".line-2").style.backgroundColor = "#ff6b6b";
-    }
-
-    /// Too Low
-  } else if (guess < wilayaNumber) {
-    if (heart === 0) {
-      document.querySelector(".right__hearts").textContent = "💔💔💔";
-      document.querySelector(
-        ".center__message"
-      ).textContent = `💥 You lost the game. it's ${wilayaNumber}`;
-      document.querySelector(".left__check").textContent = "Again!";
-      document.querySelector("body").style.backgroundImage =
-        "radial-gradient(#ff8787, #ff6b6b)";
-      document.querySelector(".line-1").style.backgroundColor = "#fff";
-      document.querySelector(".line-2").style.backgroundColor = "#fff";
-      i = -1;
-      heart = 2;
-      score = 0;
-    } else {
-      document.querySelector(".center__message").textContent =
-        "💔Too low! 📉 Keep guessing";
-      document.querySelector(".right__hearts").textContent =
-        heart === 2 ? "❤️❤️💔" : "❤️💔💔";
-      //score--;
       heart--;
       document.querySelector(".right__score").textContent = score;
       document.querySelector(".line-1").style.backgroundColor = "#ff6b6b";
