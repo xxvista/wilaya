@@ -1,14 +1,5 @@
-// Remember, we're gonna use strict mode in all scripts now!
 "use strict";
 
-// BUG TODO FIXME
-/*
-console.log(document.querySelector(".center__message").textContent);
-document.querySelector(".center__message").textContent = "Correct Number!";
-
-document.querySelector(".number").textContent = 13;
-
-document.querySelector(".left__guess").value = 0;*/
 const wilaya = [
   0,
   "Adrar",
@@ -59,17 +50,16 @@ const wilaya = [
   "Ain Temouchent",
   "Ghardaia",
   "Relizane",
-  "Relizane",
-  "El M'Ghair",
-  "El Menia",
-  "Ouled Djellal",
-  "Bordj Baji Mokhtar",
-  "Beni Abbes",
   "Timimoun",
-  "Touggourt",
-  "Djanet",
+  "Bordj Baji Mokhtar",
+  "Ouled Djellal",
+  "Beni Abbes",
   "Ain Salah",
   "Ain Guezzam",
+  "Touggourt",
+  "Djanet",
+  "El M'Ghair",
+  "El Meniaa",
 ];
 
 // Retrieve
